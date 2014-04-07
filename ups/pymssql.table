@@ -1,2 +1,3 @@
 setupRequired(python)
+setupRequired(freetds)
 envPrepend(PYTHONPATH, ${PRODUCT_DIR}/lib/python)
