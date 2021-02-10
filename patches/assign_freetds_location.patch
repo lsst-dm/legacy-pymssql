@@ -1,0 +1,15 @@
+diff --git a/setup.py b/setup.py
+index e74c679..e468a6b 100755
+--- a/setup.py
++++ b/setup.py
+@@ -142,8 +142,8 @@ if SYSTEM != 'Windows':
+ # 32 bit or 64 bit system?
+ BITNESS = struct.calcsize("P") * 8
+ 
+-include_dirs = []
+-library_dirs = []
++include_dirs = [os.getenv('FREETDS_DIR'), os.path.join(os.getenv('FREETDS_DIR'), 'include')]
++library_dirs = [os.path.join(os.getenv('FREETDS_DIR'), 'lib')]
+ if sys.platform == 'win32':
+     WINDOWS = True
+ else:
